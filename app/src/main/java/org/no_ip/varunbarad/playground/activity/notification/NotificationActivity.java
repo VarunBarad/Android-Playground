@@ -1,4 +1,4 @@
-package org.no_ip.varunbarad.playground.activity;
+package org.no_ip.varunbarad.playground.activity.notification;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import org.no_ip.varunbarad.playground.R;
+import org.no_ip.varunbarad.playground.activity.MainActivity;
 
 public class NotificationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -69,11 +70,12 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
     builder.setAutoCancel(true);
 
     // Creates explicit intent for an Activity in app
-    Intent resultIntent = new Intent(context, NotificationActivity.class);
+    Intent resultIntent = new Intent(context, NotificationResultActivity.class);
+    resultIntent.putExtra("MESSAGE", "Hooray, this is from a small notification!!");
 
     // Create a task stack for the notification Activity handling
     TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-    stackBuilder.addParentStack(NotificationActivity.class);
+    stackBuilder.addParentStack(MainActivity.class);
     stackBuilder.addNextIntent(resultIntent);
 
     // Find the resultant pending intent to launch on clicking the notification

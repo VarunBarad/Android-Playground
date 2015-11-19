@@ -11,14 +11,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="org.no_ip.varunbarad.playground.activity.notification.NotificationActivity"
-    tools:showIn="@layout/activity_notification">
+    tools:showIn="@layout/activity_notification_result">
 
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/button_small_notifications"
+    <android.support.v7.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxHeight="@dimen/size_button_max"
-        android:minHeight="@dimen/size_button_min"
-        android:onClick="onClick"
-        android:text="Show Small Notification" />
+        android:text="Data from notification:" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/textView_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
