@@ -14,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import org.no_ip.varunbarad.playground.R;
-import org.no_ip.varunbarad.playground.activity.MainActivity;
 
 public class NotificationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -75,8 +74,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
 
     // Create a task stack for the notification Activity handling
     TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-    stackBuilder.addParentStack(MainActivity.class);
-    stackBuilder.addNextIntent(resultIntent);
+    stackBuilder.addNextIntentWithParentStack(resultIntent);
 
     // Find the resultant pending intent to launch on clicking the notification
     PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
